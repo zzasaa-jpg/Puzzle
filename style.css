@@ -1,0 +1,32 @@
+body{
+	background-color: #333;
+	color: white;
+	font-family: monospace;
+	font-size: 1em;
+	font-weight: 900;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	height: 100vh;
+}
+
+#section{
+	padding: 10px;
+	overflow: hidden;
+	display: grid;
+	grid-template-columns: auto auto auto;
+	gap: 2px;
+}
+
+.div{
+	width: 150px;
+	height: 150px;
+	border: 2px solid white;
+	cursor: pointer;
+	font-size: 8rem;
+	text-align: center;
+}
+
+.win_info_h1{
+	font-size: 5em;
+}
