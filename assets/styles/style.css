@@ -30,3 +30,22 @@ body{
 .win_info_h1{
 	font-size: 5em;
 }
+
+#accessbility_btn{
+	border: 2px solid white;
+	font-size: 1rem;
+	border-radius: 4px;
+	font-family: monospace;
+	font-weight: 900;
+	background: transparent;
+	color: white;
+	padding: 8px;
+	position: absolute;
+	top: 10px;
+	left: 10px;
+	cursor: pointer;
+}
+
+.no_click {
+	pointer-events: none;
+}
