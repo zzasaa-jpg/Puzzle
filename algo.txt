@@ -1,3 +1,5 @@
+----------- This is 0.0.1 version swaping elements function ------------
+------------------- Time complexity was 'O(n2)' ------------------------
 let array_ = [[1,1,1], [1,1,1], [1,1,0]];
 let new_array = [[1,1,1], [1,1,0], [1,1,1]];
 let new1 = [[0,1,1], [1,1,1], [1,1,1]]
@@ -19,3 +21,36 @@ function move(array, value, new_value, sub_array, sub_element){
 console.log("[3]updating before => ", new_array)
 console.log("[4]after array => ",move(new_array, 0, 1, 0, 0))
 console.log("[5]stay array =>  ", new_array)
+-----------------------------------------------------------------------
+
+------------ This is 0.0.2 version swaping elements function ----------
+--------------------- Time complexity was 'O(n)'-----------------------
+let temp = array[zero_row][zero_col]@Zero value row and col.
+@For left,right,up,down moves.
+-----------------------------------------------------------------------
+for (let i = from_click_value; i > to_Zero_value ; i--){
+	array[row][i] = array[row][i-1]@move horizontally left.
+}
+array[row][col] = temp;@click row and col position inside store the temp.
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+for (let i = from_Zero_value; i < to_click_value; i++){
+	array[row][i] = array[row][i+1]@move horizontally right.
+}
+array[row][col] = temp;@click row and col position inside store the temp.
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+for (let i = from_click_value; i > to_Zero_value ; i--){
+	array[i][col] = array[i-1][col]@move vertically up.
+}
+array[row][col] = temp;@click row and col position inside store the temp.
+-----------------------------------------------------------------------
+
+-----------------------------------------------------------------------
+for (let i = from_Zero_value; i < to_click_value; i++){
+	array[i][col] = array[i+1][col]@move vertically down.
+}
+array[row][col] = temp;@click row and col position inside store the temp.
+-----------------------------------------------------------------------
