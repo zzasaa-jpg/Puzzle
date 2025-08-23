@@ -1,11 +1,11 @@
-import {toggle_accessbility_value, get_accessbility_value} from "../accessbility_state.js";
-import {accessbility_btn_read, divs_read, index_read, index_create} from "./variables.js";
+import {toggle_accessibility_value, get_accessibility_value} from "../accessibility_state.js";
+import {accessibility_btn_read, divs_read, index_read, index_create} from "./variables.js";
 
 //------------------------accessbility_btn_toggle_functionality-----------------------
-export default function accessbility_btn_toggle(){
-	accessbility_btn_read().addEventListener("click", function(){
-		let active = toggle_accessbility_value()
-		console.log(get_accessbility_value())
+export default function accessibility_btn_toggle(){
+	accessibility_btn_read().addEventListener("click", function(){
+		let active = toggle_accessibility_value()
+		console.log(get_accessibility_value())
 
 		if (active){
 			//Turn ON
