@@ -1,0 +1,50 @@
+#select_tag {
+	background-color: #333;
+	color: #fff;
+	font-family: monospace;
+	border: 1px solid #fff;
+	padding: 4px;
+	border-radius: 4px;
+	outline: none;
+	margin: 10px 0;
+	font-size: 16px;
+	width: -webkit-fill-available;
+}
+
+#choice_again_btn,
+#back_btn,
+#next_btn {
+	border: 1px solid white;
+	min-width: 75px;
+	font-family: monospace;
+	font-size: 1rem;
+	background-color: #333;
+	color: #fff;
+	min-height: 28px;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+#next_btn,
+#choice_again_btn {
+	cursor: not-allowed;
+}
+
+#top_div {
+	height: 300px;
+}
+
+#bottom_div {
+	display: flex;
+	justify-content: space-between;
+}
+
+#select_main_div {
+	width: 600px;
+}
+
+@media screen and (max-width: 568px) {
+	body {
+		height: auto;
+	}
+}

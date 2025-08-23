@@ -1,13 +1,99 @@
-export default function n_values_move_pattern(array){
-	return {
-		0: [array[0][1], array[0][2], array[1][0], array[2][0]],
-		1: [array[0][0], array[0][2], array[1][1], array[2][1]],
-		2: [array[0][0], array[0][1], array[1][2], array[2][2]],
-		3: [array[1][1], array[1][2], array[0][0], array[2][0]],
-		4: [array[1][0], array[1][2], array[0][1], array[2][1]],
-		5: [array[1][0], array[1][1], array[0][2], array[2][2]],
-		6: [array[2][1], array[2][2], array[1][0], array[0][0]],
-		7: [array[2][0], array[2][2], array[1][1], array[0][1]],
-		8: [array[2][0], array[2][1], array[1][2], array[0][2]]
+export default function n_values_move_pattern(array) {
+	const size = array.length;
+	if(size == 3){
+
+		return {
+			0: [array[0][1], array[0][2], array[1][0], array[2][0]],
+			1: [array[0][0], array[0][2], array[1][1], array[2][1]],
+			2: [array[0][0], array[0][1], array[1][2], array[2][2]],
+			3: [array[1][1], array[1][2], array[0][0], array[2][0]],
+			4: [array[1][0], array[1][2], array[0][1], array[2][1]],
+			5: [array[1][0], array[1][1], array[0][2], array[2][2]],
+			6: [array[2][1], array[2][2], array[1][0], array[0][0]],
+			7: [array[2][0], array[2][2], array[1][1], array[0][1]],
+			8: [array[2][0], array[2][1], array[1][2], array[0][2]]
+		}
+	}
+	if(size == 5){
+		return{
+			0: [array[0][1], array[0][2], array[0][3], array[0][4], array[1][0], array[2][0], array[3][0], array[4][0]],
+			1: [array[0][0], array[0][2], array[0][3], array[0][4], array[1][1], array[2][1], array[3][1], array[4][1]],
+			2: [array[0][0], array[0][1], array[0][3], array[0][4], array[1][2], array[2][2], array[3][2], array[4][2]],
+			3: [array[0][0], array[0][1], array[0][2], array[0][4], array[1][3], array[2][3], array[3][3], array[4][3]],
+			4: [array[0][0], array[0][1], array[0][2], array[0][3], array[1][4], array[2][4], array[3][4], array[4][4]],
+			5: [array[0][0], array[1][1], array[1][2], array[1][3], array[1][4], array[2][0], array[3][0], array[4][0]],
+			6: [array[1][0], array[1][2], array[1][3], array[1][4], array[0][1], array[2][1], array[3][1], array[4][1]],
+			7: [array[1][0], array[1][1], array[1][3], array[1][4], array[0][2], array[2][2], array[3][2], array[4][2]],
+			8: [array[1][0], array[1][1], array[1][2], array[1][4], array[0][3], array[2][3], array[3][3], array[4][3]],
+			9: [array[1][0], array[1][1], array[1][2], array[1][3], array[0][4], array[2][4], array[3][4], array[4][4]],
+			10:[array[2][1], array[2][2], array[2][3], array[2][4], array[0][0], array[1][0], array[3][0], array[4][0]],
+			11:[array[2][0], array[2][2], array[2][3], array[2][4], array[0][1], array[1][1], array[3][1], array[4][1]],
+			12:[array[2][0], array[2][1], array[2][3], array[2][4], array[0][2], array[1][2], array[3][2], array[4][2]],
+			13:[array[2][0], array[2][1], array[2][2], array[2][4], array[0][3], array[1][3], array[3][3], array[4][3]],
+			14:[array[2][0], array[2][1], array[2][2], array[2][3], array[0][4], array[1][4], array[3][4], array[4][4]],
+			15:[array[3][1], array[3][2], array[3][3], array[3][4], array[0][0], array[1][0], array[2][0], array[4][0]],
+			16:[array[3][0], array[3][2], array[3][3], array[3][4], array[0][1], array[1][1], array[2][1], array[4][1]],
+			17:[array[3][0], array[3][1], array[3][3], array[3][4], array[0][2], array[1][2], array[2][2], array[4][2]],
+			18:[array[3][0], array[3][1], array[3][2], array[3][4], array[0][3], array[1][3], array[2][3], array[4][3]],
+			19:[array[3][0], array[3][1], array[3][2], array[3][3], array[0][4], array[1][4], array[2][4], array[4][4]],
+			20:[array[4][1], array[4][2], array[4][3], array[4][4], array[0][0], array[1][0], array[2][0], array[3][0]],
+			21:[array[4][0], array[4][2], array[4][3], array[4][4], array[0][1], array[1][1], array[2][1], array[3][1]],
+			22:[array[4][0], array[4][1], array[4][3], array[4][4], array[0][2], array[1][2], array[2][2], array[3][2]],
+			23:[array[4][0], array[4][1], array[4][2], array[4][4], array[0][3], array[1][3], array[2][3], array[3][3]],
+			24:[array[4][0], array[4][1], array[4][2], array[4][3], array[0][4], array[1][4], array[2][4], array[3][4]]
+		}
+	}
+	if (size == 7){
+		return {
+			0: [array[0][1], array[0][2], array[0][3], array[0][4], array[0][5], array[0][6], array[1][0], array[2][0],array[3][0], array[4][0], array[5][0], array[6][0]],
+			1: [array[0][0], array[0][2], array[0][3], array[0][4], array[0][5], array[0][6], array[1][1], array[2][1],array[3][1], array[4][1], array[5][1], array[6][1]],
+			2: [array[0][0], array[0][1], array[0][3], array[0][4], array[0][5], array[0][6], array[1][2], array[2][2],array[3][2], array[4][2], array[5][2], array[6][2]],
+			3: [array[0][0], array[0][1], array[0][2], array[0][4], array[0][5], array[0][6], array[1][3], array[2][3],array[3][3], array[4][3], array[5][3], array[6][3]],
+			4: [array[0][0], array[0][1], array[0][2], array[0][3], array[0][5], array[0][6], array[1][4], array[2][4],array[3][4], array[4][4], array[5][4], array[6][4]],
+			5: [array[0][0], array[0][1], array[0][2], array[0][3], array[0][4], array[0][6], array[1][5], array[2][5],array[3][5], array[4][5], array[5][5], array[6][5]],
+			6: [array[0][0], array[0][1], array[0][2], array[0][3], array[0][4], array[0][5], array[1][6], array[2][6],array[3][6], array[4][6], array[5][6], array[6][6]],
+			7: [array[1][1], array[1][2], array[1][3], array[1][4], array[1][5], array[1][6], array[0][0], array[2][0],array[3][0], array[4][0], array[5][0], array[6][0]],
+			8: [array[1][0], array[1][2], array[1][3], array[1][4], array[1][5], array[1][6], array[0][1], array[2][1],array[3][1], array[4][1], array[5][1], array[6][1]],
+			9: [array[1][0], array[1][1], array[1][3], array[1][4], array[1][5], array[1][6], array[0][2], array[2][2],array[3][2], array[4][2], array[5][2], array[6][2]],
+			10:[array[1][0], array[1][1], array[1][2], array[1][4], array[1][5], array[1][6], array[0][3], array[2][3],array[3][3], array[4][3], array[5][3], array[6][3]],
+			11:[array[1][0], array[1][1], array[1][2], array[1][3], array[1][5], array[1][6], array[0][4], array[2][4],array[3][4], array[4][4], array[5][4], array[6][4]],
+			12:[array[1][0], array[1][1], array[1][2], array[1][3], array[1][4], array[1][6], array[0][5], array[2][5],array[3][5], array[4][5], array[5][5], array[6][5]],
+			13:[array[1][0], array[1][1], array[1][2], array[1][4], array[1][4], array[1][5], array[0][6], array[2][6],array[3][6], array[4][6], array[5][6], array[6][6]],
+			14:[array[2][1], array[2][2], array[2][3], array[2][4], array[2][5], array[2][6], array[0][0], array[1][0],array[3][0], array[4][0], array[5][0], array[6][0]],
+			15:[array[2][0], array[2][2], array[2][3], array[2][4], array[2][5], array[2][6], array[0][1], array[1][1],array[3][1], array[4][1], array[5][1], array[6][1]],
+			16:[array[2][0], array[2][1], array[2][3], array[2][4], array[2][5], array[2][6], array[0][2], array[1][2],array[3][2], array[4][2], array[5][2], array[6][2]],
+			17:[array[2][0], array[2][1], array[2][2], array[2][4], array[2][5], array[2][6], array[0][3], array[1][3],array[3][3], array[4][3], array[5][3], array[6][3]],
+			18:[array[2][0], array[2][1], array[2][2], array[2][3], array[2][5], array[2][6], array[0][4], array[1][4],array[3][4], array[4][4], array[5][4], array[6][4]],
+			19:[array[2][0], array[2][1], array[2][2], array[2][3], array[2][4], array[2][6], array[0][5], array[1][5],array[3][5], array[4][5], array[5][5], array[6][5]],
+			20:[array[2][0], array[2][1], array[2][2], array[2][3], array[2][4], array[2][5], array[0][6], array[1][6],array[3][6], array[4][6], array[5][6], array[6][6]],
+			21:[array[3][1], array[3][2], array[3][3], array[3][4], array[3][5], array[3][6], array[0][0], array[1][0],array[2][0], array[4][0], array[5][0], array[6][0]],
+			22:[array[3][0], array[3][2], array[3][3], array[3][4], array[3][5], array[3][6], array[0][1], array[1][1],array[2][1], array[4][1], array[5][1], array[6][1]],
+			23:[array[3][0], array[3][1], array[3][3], array[3][4], array[3][5], array[3][6], array[0][2], array[1][2],array[2][2], array[4][2], array[5][2], array[6][2]],
+			24:[array[3][0], array[3][1], array[3][2], array[3][4], array[3][5], array[3][6], array[0][3], array[1][3],array[2][3], array[4][3], array[5][3], array[6][3]],
+			25:[array[3][0], array[3][1], array[3][2], array[3][3], array[3][5], array[3][6], array[0][4], array[1][4],array[2][4], array[4][4], array[5][4], array[6][4]],
+			26:[array[3][0], array[3][1], array[3][2], array[3][4], array[3][5], array[3][6], array[0][5], array[1][5],array[2][5], array[4][5], array[5][5], array[6][5]],
+			27:[array[3][0], array[3][1], array[3][2], array[3][3], array[3][4], array[3][5], array[0][6], array[1][6],array[2][6], array[4][6], array[5][6], array[6][6]],
+			28:[array[4][1], array[4][2], array[4][3], array[4][4], array[4][5], array[4][6], array[0][0], array[1][0],array[2][0], array[3][0], array[5][0], array[6][0]],
+			29:[array[4][0], array[4][2], array[4][3], array[4][4], array[4][5], array[4][6], array[0][1], array[1][1],array[2][1], array[3][1], array[5][1], array[6][1]],
+			30:[array[4][0], array[4][1], array[4][3], array[4][4], array[4][5], array[4][6], array[0][2], array[1][2],array[2][2], array[3][2], array[5][2], array[6][2]],
+			31:[array[4][0], array[4][1], array[4][2], array[4][4], array[4][5], array[4][6], array[0][3], array[1][3],array[2][3], array[3][3], array[5][3], array[6][3]],
+			32:[array[4][0], array[4][1], array[4][2], array[4][3], array[4][5], array[4][6], array[0][4], array[1][4],array[2][4], array[3][4], array[5][4], array[6][4]],
+			33:[array[4][0], array[4][1], array[4][2], array[4][3], array[4][4], array[4][6], array[0][5], array[1][5],array[2][5], array[3][5], array[5][5], array[6][5]],
+			34:[array[4][0], array[4][1], array[4][2], array[4][3], array[4][4], array[4][5], array[0][6], array[1][6],array[2][6], array[3][6], array[5][6], array[6][6]],
+			35:[array[5][1], array[5][2], array[5][3], array[5][4], array[5][5], array[5][6], array[0][0], array[1][0],array[2][0], array[3][0], array[4][0], array[6][0]],
+			36:[array[5][0], array[5][2], array[5][3], array[5][4], array[5][5], array[5][6], array[0][1], array[1][1],array[2][0], array[3][1], array[4][1], array[6][1]],
+			37:[array[5][0], array[5][1], array[5][3], array[5][4], array[5][5], array[5][6], array[0][2], array[1][2],array[2][2], array[3][2], array[4][2], array[6][2]],
+			38:[array[5][0], array[5][1], array[5][2], array[5][4], array[5][5], array[5][6], array[0][3], array[1][3],array[2][3], array[3][3], array[4][3], array[6][3]],
+			39:[array[5][0], array[5][1], array[5][2], array[5][3], array[5][5], array[5][6], array[0][4], array[1][4],array[2][4], array[3][4], array[4][4], array[6][4]],
+			40:[array[5][0], array[5][1], array[5][2], array[5][3], array[5][4], array[5][6], array[0][5], array[1][5],array[2][5], array[3][5], array[4][5], array[6][5]],
+			41:[array[5][0], array[5][1], array[5][2], array[5][3], array[5][4], array[5][5], array[0][6], array[1][6],array[2][6], array[3][6], array[4][6], array[6][6]],
+			42:[array[6][1], array[6][2], array[6][3], array[6][4], array[6][5], array[6][6], array[0][0], array[1][0],array[2][0], array[3][0], array[4][0], array[5][0]],
+			43:[array[6][0], array[6][2], array[6][3], array[6][4], array[6][5], array[6][6], array[0][1], array[1][1],array[2][1], array[3][1], array[4][1], array[5][1]],
+			44:[array[6][0], array[6][1], array[6][3], array[6][4], array[6][5], array[6][6], array[0][2], array[1][2],array[2][2], array[3][2], array[4][2], array[5][2]],
+			45:[array[6][0], array[6][1], array[6][2], array[6][4], array[6][5], array[6][6], array[0][3], array[1][3],array[2][3], array[3][3], array[4][3], array[5][3]],
+			46:[array[6][0], array[6][1], array[6][2], array[6][3], array[6][5], array[6][6], array[0][4], array[1][4],array[2][4], array[3][4], array[4][4], array[5][4]],
+			47:[array[6][0], array[6][1], array[6][2], array[6][3], array[6][4], array[6][6], array[0][5], array[1][5],array[2][5], array[3][5], array[4][5], array[5][5]],
+			48:[array[6][0], array[6][1], array[6][2], array[6][3], array[6][4], array[6][5], array[0][6], array[1][6],array[2][6], array[3][6], array[4][6], array[5][6]],
+		}
 	}
 }

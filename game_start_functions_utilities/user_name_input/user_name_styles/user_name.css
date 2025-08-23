@@ -1,0 +1,65 @@
+#user_input_div {
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+	gap: 50px
+}
+
+#logo {
+	border-radius: 4px
+}
+
+#user_name {
+	background: transparent;
+	border: 1px solid white;
+	border-radius: 4px;
+	font-size: 1.3rem;
+	color: white;
+	font-family: monospace;
+	outline: none;
+	min-height: 42px;
+	min-width: 300px;
+	padding-left: 10px;
+	margin: 0 10px 10px 0;
+}
+
+#user_input_label {
+	position: absolute;
+	font-size: 15px;
+	left: 14px;
+	top: 12px;
+	background: #333;
+	padding: 2px;
+	transition: all .08s ease-in-out;
+	cursor: text;
+}
+
+#input_label_div {
+	position: relative;
+}
+
+#next_btn_for_user_name_input {
+	border: 1px solid white;
+	min-width: 75px;
+	font-family: monospace;
+	font-size: 1.2rem;
+	background-color: #333;
+	color: #fff;
+	min-height: 41px;
+	border-radius: 4px;
+	cursor: not-allowed;
+}
+
+#user_name:invalid:not(:placeholder-shown) {
+	border-color: red;
+}
+
+@media screen and (max-width: 568px) {
+	body {
+		height: auto;
+	}
+
+	#user_name {
+		min-width: auto;
+	}
+}
