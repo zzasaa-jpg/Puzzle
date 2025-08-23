@@ -1,5 +1,5 @@
 import updated_obj from "../Local_Storage/updated_obj.js";
-import { update_local_storage_values } from "../Local_Storage/local_storage.js";
+import { update_local_storage_values } from "../Local_Storage/Local_Storage.js";
 
 export default function update_previous_local_storage_values(update_values, update_keys) {
 	let previous_obj = JSON.parse(localStorage.getItem("obj"));
