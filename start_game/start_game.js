@@ -1,11 +1,11 @@
 import winning_array from "../winning_array.js";
-import {read_local_storage_values} from "../Local_Storage/Local_Storage.js"; 
+import { read_local_storage_values } from "../Local_Storage/Local_Storage.js";
 import {
 	section_create, section_read, div_create, obj_create,
 	win_pattern_array_create, win_pattern_array_read,
 	win_pattern_value_create, win_pattern_value_read,
 	accessibility_btn_create, accessibility_btn_read,
-	 divs_create, index_create,
+	divs_create, index_create,
 } from "../js/variables.js";
 import win_or_lose from "../js/win_or_lose_function.js";
 import create_the_puzzle_boxes from "../js/create_the_puzzle_boxes.js";
@@ -43,9 +43,8 @@ export default function start_game() {
 	console.log(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")]);
 	console.log(win_or_lose(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")]));
 }
-
 //--------------------accessibility button append to body--------------------------------
-function accessibility_btn_append_to_body(){
+function accessibility_btn_append_to_body() {
 	accessibility_btn_create(document.createElement("button"));
 	accessibility_btn_read().id = "accessibility_btn";
 	accessibility_btn_read().innerText = "Accessibility";
@@ -53,7 +52,7 @@ function accessibility_btn_append_to_body(){
 }
 //---------------------------------------------------------------------------------------
 //--------------------section append to body--------------------------------
-function section_append_to_body(){
+function section_append_to_body() {
 	section_create(document.createElement("section"));
 	section_read().id = "section";
 	document.body.append(section_read());

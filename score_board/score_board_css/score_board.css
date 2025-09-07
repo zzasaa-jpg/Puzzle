@@ -1,0 +1,42 @@
+#score_board_body {
+	width: 500px;
+	height: 300px;
+	border: 2px solid #fff;
+	border-radius: 10px;
+	background-color: transparent;
+}
+
+#score_board_h1 {
+	text-align: center;
+	font-size: 2.2rem;
+}
+
+#time_h2,
+#moves_h2 {
+	font-size: 1.4rem;
+	margin: 0;
+}
+
+#best_time_h2 {
+	text-align: center;
+	font-size: 1.4rem;
+	margin: 35px 0;
+}
+
+#time_h2_and_moves_h2_div,
+#play_again_button_and_new_game_button_div {
+	display: flex;
+	justify-content: space-evenly;
+}
+
+#play_again_button,
+#new_game_button {
+	font-family: monospace;
+	font-size: 1rem;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #fff;
+	padding: 8px;
+	cursor: pointer;
+}

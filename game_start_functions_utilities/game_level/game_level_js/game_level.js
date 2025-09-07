@@ -1,8 +1,16 @@
 import start_select_values from "../../select_game_values/select_game_values_js/select_game_values.js";
-import { read_local_storage_values, update_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
-import updated_obj from "../../../Local_Storage/updated_obj.js";
+import { read_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
 import start_game from "../../../start_game/start_game.js";
 import update_previous_local_storage_values from "../../update_previous_local_storage_values.js";
+import add_timer from "../../../timer/timer_js/timer.js";
+import { live_update, index_read, divs_read } from "../../../../js/variables.js";
+import { get_accessibility_value } from "../../../accessibility_state.js";
+import { total_moves_helper_function } from "../../../game_helper_functions/total_moves/total_moves_js/total_moves.js";
+import restart_btn_helper_function from "../../../game_helper_functions/restart_btn/restart_btn_js/restart_btn.js";
+import new_game_btn_helper_function from "../../../game_helper_functions/new_game_btn/new_game_btn_js/new_game_btn.js";
+import question_btn from "../../../question_btn/question_btn_js/question_btn.js";
+import setting_button_function from "../../../settings/settings_js/settings.js";
+
 //----------------------variables creating-------------------------------------
 let level_main_div_, top_div_, bottom_div_, select_tag_, label_, choice_again_btn_, next_btn_, back_btn_, play_bool, selected_value;
 //-----------------------------------------------------------------------------
@@ -79,7 +87,7 @@ function select_tag() {
 	select_tag_.id = "select_tag";
 	choice_again_btn(select_tag_);//choce_again_btn_function---------------
 	select_tag_.addEventListener("change", function (e) {
-		update_previous_local_storage_values([e.target.value],[["game_level"]]);//previous values and new values updated at a time
+		update_previous_local_storage_values([e.target.value], [["game_level"]]);//previous values and new values updated at a time
 		next_btn_.disabled = false;
 		next_btn_.style.cursor = "pointer";
 		choice_again_btn_.disabled = false;
@@ -122,9 +130,17 @@ function next_btn() {
 	next_btn_.innerText = "Next";
 	next_btn_.addEventListener("click", function () {
 		play_bool = true;
-		update_previous_local_storage_values([play_bool],[["play"]]);//previous values and new values updated at a time
-		level_main_div_.remove()
-		start_game()
+		update_previous_local_storage_values([play_bool], [["play"], ["short_cuts"]]);//previous values and new values updated at a time
+		level_main_div_.remove();
+		start_game();
+		add_timer();
+		live_update(true);
+		if (get_accessibility_value() == true) divs_read()[index_read()].style.backgroundColor = "transparent";//checking for accessibility btn value according background-color adding.
+		total_moves_helper_function();
+		restart_btn_helper_function();
+		new_game_btn_helper_function();
+		question_btn();
+		setting_button_function();
 	});
 	return next_btn_;
 }

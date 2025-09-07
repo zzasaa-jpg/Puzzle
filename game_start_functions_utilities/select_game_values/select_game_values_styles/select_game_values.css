@@ -1,5 +1,5 @@
 #select_tag {
-	background-color: #333;
+	background-color: #1A1A1D;
 	color: #fff;
 	font-family: monospace;
 	border: 1px solid #fff;
@@ -18,7 +18,7 @@
 	min-width: 75px;
 	font-family: monospace;
 	font-size: 1rem;
-	background-color: #333;
+	background-color: #1A1A1D;
 	color: #fff;
 	min-height: 28px;
 	border-radius: 4px;

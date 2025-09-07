@@ -1,5 +1,12 @@
-body{
-	background-color: #333;
+html {
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-ms-user-select: none;
+}
+
+body {
+	background-color: #1A1A1D;
 	color: white;
 	font-family: monospace;
 	font-size: 1em;
@@ -10,31 +17,33 @@ body{
 	height: 90vh;
 }
 
-#section{
+#section {
 	padding: 10px;
 	overflow: hidden;
 	display: grid;
 	grid-template-columns: auto auto auto;
-	gap: 2px;
+	gap: 5px;
 }
 
-.div{
+.div {
 	width: 150px;
 	height: 150px;
-	border: 2px solid white;
+	border: 1px solid #fff;
 	cursor: pointer;
 	font-size: 4rem;
 	display: flex;
 	justify-content: center;
 	align-items: center;
 	/*text-align: center;*/
+	background-color: #1A535C;
+	border-radius: 8px;
 }
 
-.win_info_h1{
+.win_info_h1 {
 	font-size: 5em;
 }
 
-#accessibility_btn{
+#accessibility_btn {
 	border: 2px solid white;
 	font-size: 1rem;
 	border-radius: 4px;
@@ -50,5 +59,9 @@ body{
 }
 
 .no_click {
+	pointer-events: none;
+}
+
+.no_click1 {
 	pointer-events: none;
 }

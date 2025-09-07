@@ -1,0 +1,14 @@
+#restart_btn {
+	position: absolute;
+	top: 108px;
+	left: 10px;
+	font-family: monospace;
+	font-size: 1rem;
+	font-weight: 900;
+	padding: 8px;
+	border: 2px solid #fff;
+	border-radius: 4px;
+	background-color: transparent;
+	color: #fff;
+	cursor: pointer;
+}
