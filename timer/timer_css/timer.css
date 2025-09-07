@@ -1,0 +1,49 @@
+@font-face {
+	font-family: 'DSDigital';
+	src: url('../Fonts/DSDigital.woff2') format('woff2'), url("../Fonts/DSDigital.woff") format('woff');
+	font-weight: normal;
+	font-style: normal;
+}
+
+#timer_div {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-family: 'DSDigital', monospace;
+	position: absolute;
+	bottom: 10px;
+}
+
+#timer_div_minutes,
+#timer_div_seconds {
+	width: 100px;
+	height: 100px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+#timer_minutes,
+#timer_seconds {
+	font-size: 5em;
+	font-weight: 100;
+	margin: 0;
+}
+
+#btn {
+	background-color: transparent;
+	display: flex;
+	font-size: 3em;
+	border-radius: 50%;
+	border: 1px solid white;
+	width: 35px;
+	height: 35px;
+	align-items: center;
+	color: white;
+	cursor: pointer;
+}
+
+#ratio {
+	font-size: 4em;
+	margin: 0;
+}

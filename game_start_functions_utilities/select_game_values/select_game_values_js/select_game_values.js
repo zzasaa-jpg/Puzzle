@@ -1,11 +1,10 @@
 import start_level from "../../game_level/game_level_js/game_level.js";
-import { read_local_storage_values, update_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
-import updated_obj from "../../../Local_Storage/updated_obj.js";
+import { read_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
 import update_previous_local_storage_values from "../../update_previous_local_storage_values.js";
 
 import start_user_input_name_function from "../../user_name_input/user_name_js/user_name_input.js";
 //----------------------variables creating-------------------------------------
-let select_main_div_, top_div_, bottom_div_, select_tag_, label_, choice_again_btn_, next_btn_, back_btn_, css_link_, selected_value;
+let select_main_div_, top_div_, bottom_div_, select_tag_, label_, choice_again_btn_, next_btn_, back_btn_, selected_value;
 //-----------------------------------------------------------------------------
 //---------start_select_values function for start the website------------------
 export default function start_select_values() {
@@ -80,7 +79,7 @@ function select_tag() {
 	select_tag_.id = "select_tag";
 	choice_again_btn(select_tag_);//choce_again_btn_function---------------
 	select_tag_.addEventListener("change", function (e) {
-		update_previous_local_storage_values([e.target.value],[["select_game_values"]]);//previous values and new values updated at a time
+		update_previous_local_storage_values([e.target.value], [["select_game_values"]]);//previous values and new values updated at a time
 		next_btn_.disabled = false;
 		next_btn_.style.cursor = "pointer";
 		choice_again_btn_.disabled = false;

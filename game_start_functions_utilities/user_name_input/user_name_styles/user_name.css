@@ -6,7 +6,7 @@
 }
 
 #logo {
-	border-radius: 4px
+	border-radius: 4px;
 }
 
 #user_name {
@@ -28,7 +28,7 @@
 	font-size: 15px;
 	left: 14px;
 	top: 12px;
-	background: #333;
+	background: #1A1A1D;
 	padding: 2px;
 	transition: all .08s ease-in-out;
 	cursor: text;
@@ -43,7 +43,7 @@
 	min-width: 75px;
 	font-family: monospace;
 	font-size: 1.2rem;
-	background-color: #333;
+	background-color: #1A1A1D;
 	color: #fff;
 	min-height: 41px;
 	border-radius: 4px;

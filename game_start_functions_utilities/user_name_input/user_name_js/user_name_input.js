@@ -1,5 +1,4 @@
-import { read_local_storage_values, update_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
-import updated_obj from "../../../Local_Storage/updated_obj.js";
+import { read_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
 import start_select_values from "../../select_game_values/select_game_values_js/select_game_values.js";
 import update_previous_local_storage_values from "../../update_previous_local_storage_values.js";
 //----------------------variables creating-------------------------------------
@@ -18,7 +17,7 @@ export default function start_user_input_name_function() {
 window.addEventListener("click", function (e) {
 	if (value != 0) return;
 	else {
-		if(label_) label_.style.top = "12px";
+		if (label_) label_.style.top = "12px";
 		else return;
 	}
 })
@@ -109,7 +108,7 @@ function next_btn() {
 	user_name_length_is_correct_than_next_btn_disable_false(value);
 	next_btn_.addEventListener("click", function () {
 		user_name_first_time_value_bool = true;//user_name_first_time_value update to 'TRUE'
-		update_previous_local_storage_values([value, user_name_first_time_value_bool],[["user_name"], ["user_name_first_time_value"]]);//previous values and new values updated at a time
+		update_previous_local_storage_values([value, user_name_first_time_value_bool], [["user_name"], ["user_name_first_time_value"]]);//previous values and new values updated at a time
 		main_div_.remove();
 		start_select_values();
 	});
