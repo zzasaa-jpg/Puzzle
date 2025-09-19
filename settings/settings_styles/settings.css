@@ -179,3 +179,28 @@ input:checked+.slider:before {
 		background-color: #44444400;
 	}
 }
+
+@media screen and (max-width: 750px) {
+	#setting_button {
+		right: 7px;
+		bottom: 50px;
+		top: auto;
+	}
+
+	#setting_dialog {
+		flex-direction: column;
+	}
+
+	#setting_box_left_side_div {
+		height: 200px;
+		width: inherit;
+	}
+
+	#setting_box_nav_bar {
+		width: -webkit-fill-available;
+	}
+
+	#setting_box_right_side_div {
+		height: -webkit-fill-available;
+	}
+}

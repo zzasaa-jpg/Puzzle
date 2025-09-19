@@ -45,7 +45,7 @@ function question_container_page() {
 function head() {
 	head_ = document.createElement("h1");
 	head_.id = "head";
-	head_.innerText = "Heading";
+	head_.innerText = "Puzzle - About";
 	return head_;
 }
 //--------------------------------------------------------------------------------------------
@@ -53,7 +53,7 @@ function head() {
 //---------------------------------paragraph (p-tag)------------------------------------------
 function paragraph() {
 	paragraph_ = document.createElement("p");
-	paragraph_.innerText = "paragraph";
+	paragraph_.innerText = "ABOUT THIS GAME => Puzzle is a lightweight 3x3 sliding-tile puzzle game built with html,css and js. You need to move the tiles around until they are in the correct order to complete the sequence. It's simple to play, works on both computer and mobile, and is great for quick brain exercise.";
 	paragraph_.id = "paragraph_of_question_btn";
 	return paragraph_;
 }

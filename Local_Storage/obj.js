@@ -9,5 +9,6 @@ let obj = {
 	best_time: { minutes: 0, seconds: 0 },
 	muted: false,
 	short_cuts: false,
+	accessibility_value: false,
 }
 export default obj;

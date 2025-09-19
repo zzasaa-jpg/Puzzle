@@ -5,3 +5,12 @@
 	top: 55px;
 	left: 10px;
 }
+
+@media screen and (max-width: 750px) {
+	#total_moves_h2 {
+		font-size: 2.2rem;
+		top: 10px;
+		left: 10px;
+		margin: 0;
+	}
+}

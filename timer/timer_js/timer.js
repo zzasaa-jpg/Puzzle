@@ -7,10 +7,10 @@ import {
 	seconds_update, minutes_update,
 	clear_interval_create, divs_read,
 	accessibility_btn_read, restart_button_read,
-	new_game_button_read
+	new_game_button_read, clear_interval_read,
 } from "../../js/variables.js";
 import update_previous_local_storage_values from "../../game_start_functions_utilities/update_previous_local_storage_values.js"
-import { toggle_accessibility_value, get_accessibility_value } from "../../../accessibility_state.js";
+import { update_accessibility_value } from "../../accessibility_state.js";
 //-----------------------------------timer variables--------------------------------------
 let seconds, minutes, live, timer_div_, play_pause_button_, timer_div_minutes_, timer_minutes_h1_, ratio_h1_, timer_div_seconds_, timer_seconds_h1_;
 //----------------------------------------------------------------------------------------
@@ -32,6 +32,10 @@ export default async function add_timer() {
 	timer_div_seconds_.append(timer_seconds_h1());
 	//------------------------call the function each seconds------------------------------
 	if (read_local_storage_values("play")) {//Local storage value 'play' is true than setInterval run else nothing.
+		if (clear_interval_read()) {
+			clearInterval(clear_interval_read());
+			clear_interval_create(null);
+		}
 		let interval = setInterval(() => {
 			if (live_read()) {
 				const timer_obj = timer(seconds_read(), minutes_read());//obj of timer function
@@ -138,7 +142,7 @@ function pointers_none_while_timer_pause() {
 		accessibility_btn_read().disabled = true;
 		restart_button_read().disabled = true;
 		new_game_button_read().disabled = true;
-		get_accessibility_value() ? toggle_accessibility_value() : toggle_accessibility_value();
+		if (read_local_storage_values("accessibility_value")) update_accessibility_value(false);
 		for (let i = 0; i < divs_read().length; i++) {
 			divs_read()[i].classList.add("no_click1");
 		}
@@ -147,7 +151,7 @@ function pointers_none_while_timer_pause() {
 		accessibility_btn_read().disabled = false;
 		restart_button_read().disabled = false;
 		new_game_button_read().disabled = false;
-		get_accessibility_value() == false ? toggle_accessibility_value() : toggle_accessibility_value();
+		if (read_local_storage_values("accessibility_value")) update_accessibility_value(true);
 		for (let i = 0; i < divs_read().length; i++) {
 			divs_read()[i].classList.remove("no_click1");
 		}

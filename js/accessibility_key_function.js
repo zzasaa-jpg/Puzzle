@@ -7,7 +7,7 @@ import {
 	section_read, timer_div_read, live_update,
 	total_moves_counter_read, total_moves_counter_update,
 	restart_button_read, total_moves_h2_read, accessibility_btn_read, question_button_read,
-	new_game_button_read, setting_button_read,
+	new_game_button_read, setting_button_read, clear_interval_read, clear_interval_create,
 } from "./variables.js";
 import winning_array from "../winning_array.js";
 import move from "./move_function.js";
@@ -22,12 +22,13 @@ export default function accessbility_key() {
 }
 //--------------------------------------------------------------------------------------------
 function accesibility_key_eventlistener_function() {
-	if (!get_accessibility_value()) return;
+	if (get_accessibility_value() == false) return;
 	total_moves_counter_update(total_moves_counter_read() + 1);
 	update_previous_local_storage_values([total_moves_counter_read()], [["total_moves"]]);
 	update_the_move_in_UI();
 	divs_read()[index_read()].style.backgroundColor = "#1A535C";
 	let e = event.key;
+	console.log(e)
 	if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e)) {
 		let next = obj_read(read_local_storage_values("game_level"))[index_read()][e];
 		if (next != null && divs_read()[next]) {
@@ -42,6 +43,10 @@ function accesibility_key_eventlistener_function() {
 		if (win_or_lose(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")])) {
 			section_read().innerHTML = `<h1 class="win_info_h1">Game was won!!!</h1>`;
 			timer_div_read().remove();
+			if (clear_interval_read()) {
+				clearInterval(clear_interval_read());
+				clear_interval_create(null);
+			}
 			accessibility_btn_read().remove();
 			question_button_read().remove();
 			total_moves_h2_read().remove();
@@ -56,4 +61,3 @@ function accesibility_key_eventlistener_function() {
 		}
 	}
 }
-

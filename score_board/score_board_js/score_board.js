@@ -1,7 +1,7 @@
 import {
 	section_read, live_update,
 	seconds_update, minutes_update,
-	clear_interval_read, total_moves_counter_update,
+	total_moves_counter_update,
 	divs_read, index_read
 } from "../../js/variables.js";
 import { read_local_storage_values } from "../../Local_Storage/Local_Storage.js";
@@ -22,7 +22,13 @@ let score_board_body_, score_board_h1_, time_h2_, moves_h2_, best_time_h2_, time
 //-------------------------export function score_board-----------------------------------------
 export default function score_board() {
 	section_read().append(create_score_board());
-	section_read().style.display = "block";
+	section_read().style.display = "flex";
+	section_read().style.flexDirection = "column";
+	section_read().style.padding = 0;
+	section_read().style.overflows = "none";
+	section_read().style.justifyContent = "center";
+	section_read().style.alignItems = "center";
+	section_read().style.gap = 0;
 	score_board_body_.append(score_board_h1(), score_board_time_h2_and_moves_h2_div());
 	time_h2_and_moves_h2_div_.append(score_board_time_h2(), score_board_moves_h2());
 	score_board_body_.append(score_board_best_time_h2());
@@ -92,7 +98,6 @@ function score_board_play_again_button() {
 		question_btn();
 		setting_button_function();
 		update_previous_local_storage_values([{ minute: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
-		clearInterval(clear_interval_read());
 		seconds_update(0);
 		minutes_update(0);
 		total_moves_counter_update(0);
@@ -113,7 +118,6 @@ function score_board_new_game_button() {
 		section_read().remove();
 		start_user_input_name_function();
 		get_accessibility_value() ? toggle_accessibility_value() : "";
-		clearInterval(clear_interval_read())
 		seconds_update(0);
 		minutes_update(0);
 		total_moves_counter_update(0);

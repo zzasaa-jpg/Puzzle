@@ -1,4 +1,5 @@
-let section, div, win_pattern_array, win_pattern_value, divs, index, obj, accessibility_btn, timer_div, live, total_moves_counter, minutes, seconds, clear_interval, restart_button, new_game_button, total_moves_h2, question_button, setting_box_right_side_div, nav_bar_key_h1, div__, span_of_array, audio_tag_1, audio_tag_2, setting_button;
+let section, div, win_pattern_array, win_pattern_value, divs, index, obj, accessibility_btn, timer_div, live, total_moves_counter, minutes, seconds, clear_interval, restart_button, new_game_button, total_moves_h2, question_button, setting_box_right_side_div, nav_bar_key_h1, div__, span_of_array, audio_tag_2, setting_button;
+//** total 24 variables
 
 //----------------section-------------------------
 export function section_create(create_thing) {
@@ -353,22 +354,6 @@ export function span_of_array_update(update_thing) {
 
 export function span_of_array_read() {
 	return span_of_array;
-}
-//-----------------------------------------------
-
-//----------------audio tag 1------------------
-export function audio_tag_1_create(create_thing) {
-	audio_tag_1 = create_thing;
-	return audio_tag_1;
-}
-
-export function audio_tag_1_update(update_thing) {
-	audio_tag_1 = update_thing;
-	return audio_tag_1;
-}
-
-export function audio_tag_1_read() {
-	return audio_tag_1;
 }
 //-----------------------------------------------
 

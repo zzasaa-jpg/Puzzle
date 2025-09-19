@@ -41,6 +41,7 @@ body {
 
 .win_info_h1 {
 	font-size: 5em;
+	text-align: center;
 }
 
 #accessibility_btn {
@@ -64,4 +65,21 @@ body {
 
 .no_click1 {
 	pointer-events: none;
+}
+
+@media screen and (max-width: 750px) {
+	.div {
+		width: 110px;
+		height: 110px;
+	}
+
+	#accessibility_btn {
+		bottom: 100px;
+		top: auto;
+	}
+
+	.win_info_h1 {
+		font-size: 3rem;
+	}
+
 }

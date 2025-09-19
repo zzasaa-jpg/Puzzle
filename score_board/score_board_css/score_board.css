@@ -40,3 +40,19 @@
 	padding: 8px;
 	cursor: pointer;
 }
+
+@media screen and (max-width: 750px) {
+	#score_board_body {
+		width: -webkit-fill-available;
+		height: 270px;
+	}
+
+	#time_h2,
+	#moves_h2 {
+		font-size: 1rem;
+	}
+
+	#best_time_h2 {
+		font-size: 1rem;
+	}
+}

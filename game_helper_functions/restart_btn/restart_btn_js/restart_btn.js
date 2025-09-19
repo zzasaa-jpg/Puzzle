@@ -2,7 +2,8 @@ import {
 	section_read, accessibility_btn_read,
 	live_update, seconds_update, minutes_update,
 	clear_interval_read, total_moves_counter_update,
-	divs_read, index_read, timer_div_read, restart_button_create
+	divs_read, index_read, timer_div_read, restart_button_create,
+	clear_interval_create,
 } from "../../../js/variables.js";
 import update_previous_local_storage_values from "../../../game_start_functions_utilities/update_previous_local_storage_values.js"
 import start_game from "../../../start_game/start_game.js";
@@ -19,9 +20,12 @@ export default function restart_btn_helper_function() {
 		update_previous_local_storage_values([{ minute: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
 		section_read().remove();
 		timer_div_read().remove();
+		if (clear_interval_read()) {
+			clearInterval(clear_interval_read());
+			clear_interval_create(null);
+		}
 		live_update(false);
 		accessibility_btn_read().remove();
-		clearInterval(clear_interval_read())
 		start_game();
 		add_timer();
 		live_update(true);
