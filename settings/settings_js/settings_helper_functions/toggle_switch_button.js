@@ -1,4 +1,4 @@
-import { audio_tag_1_read, audio_tag_2_read } from "../../../js/variables.js";
+import { audio_tag_2_read } from "../../../js/variables.js";
 import update_previous_local_storage_values from "../../../game_start_functions_utilities/update_previous_local_storage_values.js";
 import { read_local_storage_values } from "../../../Local_Storage/Local_Storage.js";
 //-------------toggle switch button function--------------------------
@@ -22,11 +22,9 @@ export default function toggle_switch_button() {
 	//------------------------------------------------------------------------------------------
 	input.addEventListener("change", function () {
 		if (input.checked) {
-			audio_tag_1_read().muted = true;
 			audio_tag_2_read().muted = true;
 			update_previous_local_storage_values([true], [["muted"]]);//previous values and new values updated at a time
 		} else {
-			audio_tag_1_read().muted = false;
 			audio_tag_2_read().muted = false;
 			update_previous_local_storage_values([false], [["muted"]]);//previous values and new values updated at a time
 		}

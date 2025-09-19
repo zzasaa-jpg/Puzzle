@@ -25,7 +25,7 @@
 
 #timer_minutes,
 #timer_seconds {
-	font-size: 5em;
+	font-size: 5rem;
 	font-weight: 100;
 	margin: 0;
 }
@@ -33,17 +33,44 @@
 #btn {
 	background-color: transparent;
 	display: flex;
-	font-size: 3em;
 	border-radius: 50%;
 	border: 1px solid white;
 	width: 35px;
 	height: 35px;
 	align-items: center;
-	color: white;
 	cursor: pointer;
 }
 
 #ratio {
 	font-size: 4em;
 	margin: 0;
+}
+
+@media screen and (max-width: 750px) {
+	#timer_div {
+		top: 3px;
+		bottom: auto;
+		right: 0;
+	}
+
+	#btn {
+		width: 30px;
+		height: 30px;
+	}
+
+	#timer_div_minutes,
+	#timer_div_seconds {
+		width: 50px;
+		height: auto;
+	}
+
+	#ratio {
+		font-size: 3rem;
+	}
+
+	#timer_minutes,
+	#timer_seconds {
+		font-size: 3rem;
+	}
+
 }

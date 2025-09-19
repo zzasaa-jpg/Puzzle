@@ -6,6 +6,7 @@ import {
 	total_moves_counter_read, total_moves_counter_update,
 	accessibility_btn_read, total_moves_h2_read, question_button_read,
 	new_game_button_read, restart_button_read, setting_button_read,
+	clear_interval_read, clear_interval_create,
 } from "./variables.js";
 import move from "./move_function.js";
 import win_or_lose from "./win_or_lose_function.js";
@@ -16,7 +17,7 @@ import { update_the_move_in_UI } from "../game_helper_functions/total_moves/tota
 try {
 	total_moves_counter_create(read_local_storage_values("total_moves"));
 }
-catch(err){
+catch (err) {
 	console.error(err);
 }
 //----------------------- render the boxes according the array ----------------------
@@ -31,8 +32,12 @@ export default function render_the_boxes() {
 			move(win_pattern_value_read(), ele.innerText, index);
 			if (win_or_lose(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")])) {
 				section_read().innerHTML = '';
-				section_read().innerHTML = `<h1 class="win_info_h1">Game was won!!!</h1>`;
+				section_read().innerHTML = `<h1 class="win_info_h1">You won the game!!!</h1>`;
 				timer_div_read().remove();
+				if (clear_interval_read()) {
+					clearInterval(clear_interval_read());
+					clear_interval_create(null);
+				}
 				accessibility_btn_read().remove();
 				question_button_read().remove();
 				total_moves_h2_read().remove();

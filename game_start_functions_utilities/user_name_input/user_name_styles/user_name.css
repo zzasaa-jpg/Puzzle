@@ -55,10 +55,6 @@
 }
 
 @media screen and (max-width: 568px) {
-	body {
-		height: auto;
-	}
-
 	#user_name {
 		min-width: auto;
 	}

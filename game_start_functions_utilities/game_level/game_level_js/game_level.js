@@ -132,6 +132,7 @@ function next_btn() {
 		play_bool = true;
 		update_previous_local_storage_values([play_bool], [["play"], ["short_cuts"]]);//previous values and new values updated at a time
 		level_main_div_.remove();
+		document.getElementsByTagName("body")[0].style.height = "90vh";
 		start_game();
 		add_timer();
 		live_update(true);

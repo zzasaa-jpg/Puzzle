@@ -12,3 +12,11 @@
 	color: #fff;
 	cursor: pointer;
 }
+
+@media screen and (max-width: 750px) {
+	#restart_btn {
+		top: auto;
+		bottom: 55px;
+		min-width: 134px;
+	}
+}
