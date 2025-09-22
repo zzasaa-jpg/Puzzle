@@ -40,7 +40,7 @@ function accesibility_key_eventlistener_function() {
 		move(win_pattern_value_read(), value, index_read());
 		divs_read()[index_read()].style.backgroundColor = "transparent";
 		if (win_or_lose(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")])) {
-			section_read().innerHTML = `<h1 class="win_info_h1">Game was won!!!</h1>`;
+			section_read().innerHTML = `<h1 class="win_info_h1">You won the game!!!</h1>`;
 			timer_div_read().remove();
 			if (clear_interval_read()) {
 				clearInterval(clear_interval_read());
