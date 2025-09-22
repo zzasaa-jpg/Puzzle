@@ -28,7 +28,6 @@ function accesibility_key_eventlistener_function() {
 	update_the_move_in_UI();
 	divs_read()[index_read()].style.backgroundColor = "#1A535C";
 	let e = event.key;
-	console.log(e)
 	if (["ArrowRight", "ArrowDown", "ArrowLeft", "ArrowUp"].includes(e)) {
 		let next = obj_read(read_local_storage_values("game_level"))[index_read()][e];
 		if (next != null && divs_read()[next]) {
@@ -57,7 +56,6 @@ function accesibility_key_eventlistener_function() {
 			fire_audio();
 			confetti_function();
 			score_board();
-			console.log(index_read())
 		}
 	}
 }

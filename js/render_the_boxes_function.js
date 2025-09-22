@@ -49,7 +49,6 @@ export default function render_the_boxes() {
 				confetti_function();
 				score_board();
 			}
-			else console.log("")
 		})
 	})
 }

@@ -192,7 +192,7 @@ input:checked+.slider:before {
 	}
 
 	#setting_box_left_side_div {
-		height: 200px;
+		height: calc(100svh / 5);
 		width: inherit;
 	}
 

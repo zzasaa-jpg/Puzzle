@@ -1,4 +1,5 @@
 import { audio_tag_2_create } from "../js/variables.js";
+import { read_local_storage_values } from "../Local_Storage/Local_Storage.js";
 let audio_tag2 = document.createElement("audio");//single autio tags creating.
 audio_tag_2_create(audio_tag2);
 //---------------------confetti_function--------------------------
@@ -19,7 +20,10 @@ export function create_audio_tag(tag, src) {
 	source.src = src;
 	source.type = "audio/mp3";
 	tag.controls = true;
-	tag.muted = false;
+	if (localStorage.getItem("obj")) {
+		if (read_local_storage_values("muted")) tag.muted = true;
+		else tag.muted = false;
+	}
 	tag.append(source);
 	tag.style.display = "none";
 	document.body.prepend(tag);

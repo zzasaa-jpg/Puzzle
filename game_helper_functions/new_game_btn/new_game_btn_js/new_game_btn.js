@@ -48,7 +48,7 @@ function mediaQuery_match(x_point) {
 			document.getElementsByTagName("body")[0].style.height = "auto";
 		}
 	} else {
-		document.getElementsByTagName("body")[0].style.height = "90vh";
+		document.getElementsByTagName("body")[0].style.height = "90svh";
 	}
 }
 //----------------------------------------------------------------------------

@@ -11,6 +11,7 @@ import {
 } from "../../js/variables.js";
 import update_previous_local_storage_values from "../../game_start_functions_utilities/update_previous_local_storage_values.js"
 import { update_accessibility_value } from "../../accessibility_state.js";
+import accessibility_button_disable from "../../responsive_layout_utilities/accessibility_button_disable.js";
 //-----------------------------------timer variables--------------------------------------
 let seconds, minutes, live, timer_div_, play_pause_button_, timer_div_minutes_, timer_minutes_h1_, ratio_h1_, timer_div_seconds_, timer_seconds_h1_;
 //----------------------------------------------------------------------------------------
@@ -65,8 +66,7 @@ function timer_div() {
 async function play_pause_button() {
 	play_pause_button_ = document.createElement("button");
 	play_pause_button_.id = "btn";
-	const svgMarkup = await call_svg("../timer/svg/pause-outline.svg");
-	play_pause_button_.innerHTML = svgMarkup;
+	play_pause_button_.innerHTML = await call_svg("../timer/svg/pause-outline.svg");
 	//----------------------toggle for pause or play timer--------------------------------
 	play_pause_button_.addEventListener("click", async function () {
 		live = !live; live_update(live);
@@ -148,7 +148,7 @@ function pointers_none_while_timer_pause() {
 		}
 	}
 	else {
-		accessibility_btn_read().disabled = false;
+		accessibility_button_disable(window.matchMedia("(max-width: 750px)"));
 		restart_button_read().disabled = false;
 		new_game_button_read().disabled = false;
 		if (read_local_storage_values("accessibility_value")) update_accessibility_value(true);

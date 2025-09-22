@@ -14,12 +14,10 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	height: 90vh;
+	height: 90svh;
 }
 
 #section {
-	padding: 10px;
-	overflow: hidden;
 	display: grid;
 	grid-template-columns: auto auto auto;
 	gap: 5px;
@@ -34,7 +32,6 @@ body {
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/*text-align: center;*/
 	background-color: #1A535C;
 	border-radius: 8px;
 }
