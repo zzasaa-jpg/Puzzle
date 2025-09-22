@@ -15,6 +15,7 @@ import _array_splice from "../js/_array_splice_function.js";
 import accessibility_key from "../js/accessibility_key_function.js";
 import accessibility_btn_toggle from "../js/accessibility_btn_toggle.js";
 import accessibility_index_obj from "../accessibility_index_obj.js";
+import accessibility_button_disable from "../responsive_layout_utilities/accessibility_button_disable.js"
 
 export default function start_game() {
 	//----------------- creating the variables and arrays -------------------------------
@@ -39,15 +40,13 @@ export default function start_game() {
 	accessibility_key();
 	accessibility_btn_toggle();
 	//-----------------------------------------------------------------------------------
-
-	console.log(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")]);
-	console.log(win_or_lose(win_pattern_value_read(), winning_array()[read_local_storage_values("game_level")][read_local_storage_values("select_game_values")]));
 }
 //--------------------accessibility button append to body--------------------------------
 function accessibility_btn_append_to_body() {
 	accessibility_btn_create(document.createElement("button"));
 	accessibility_btn_read().id = "accessibility_btn";
 	accessibility_btn_read().innerText = "Accessibility";
+	accessibility_button_disable(window.matchMedia("(max-width: 750px)"))
 	document.body.append(accessibility_btn_read());
 }
 //---------------------------------------------------------------------------------------

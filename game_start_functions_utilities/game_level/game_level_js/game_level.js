@@ -128,11 +128,11 @@ function next_btn() {
 	next_btn_.id = "next_btn";
 	next_btn_.disabled = true;
 	next_btn_.innerText = "Next";
-	next_btn_.addEventListener("click", function () {
+	next_btn_.addEventListener("click", async function () {
 		play_bool = true;
-		update_previous_local_storage_values([play_bool], [["play"], ["short_cuts"]]);//previous values and new values updated at a time
+		update_previous_local_storage_values([play_bool], [["play"]]);//previous values and new values updated at a time
 		level_main_div_.remove();
-		document.getElementsByTagName("body")[0].style.height = "90vh";
+		document.getElementsByTagName("body")[0].style.height = "90svh";
 		start_game();
 		add_timer();
 		live_update(true);
@@ -140,8 +140,8 @@ function next_btn() {
 		total_moves_helper_function();
 		restart_btn_helper_function();
 		new_game_btn_helper_function();
-		question_btn();
-		setting_button_function();
+		await question_btn();
+		await setting_button_function();
 	});
 	return next_btn_;
 }

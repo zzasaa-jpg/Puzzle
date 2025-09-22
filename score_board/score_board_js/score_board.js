@@ -16,12 +16,14 @@ import new_game_btn_helper_function from "../../game_helper_functions/new_game_b
 import question_btn from "../../question_btn/question_btn_js/question_btn.js";
 import setting_button_function from "../../settings/settings_js/settings.js";
 import { update_the_move_in_UI } from "../../game_helper_functions/total_moves/total_moves_js/total_moves.js";
+import score_board_body_height from "../../responsive_layout_utilities/score_board_body_height.js";
 //-----------------------------score board variables-------------------------------------------
 let score_board_body_, score_board_h1_, time_h2_, moves_h2_, best_time_h2_, time_h2_and_moves_h2_div_, play_again_button_, new_game_button_, play_again_button_and_new_game_button_div_;
 //---------------------------------------------------------------------------------------------
 //-------------------------export function score_board-----------------------------------------
 export default function score_board() {
 	section_read().append(create_score_board());
+	document.getElementsByTagName("body")[0].style.display = "block";
 	section_read().style.display = "flex";
 	section_read().style.flexDirection = "column";
 	section_read().style.padding = 0;
@@ -88,15 +90,16 @@ function score_board_play_again_button() {
 	play_again_button_ = document.createElement("button");
 	play_again_button_.id = "play_again_button";
 	play_again_button_.innerText = "Play Again";
-	play_again_button_.addEventListener("click", function () {
+	play_again_button_.addEventListener("click", async function () {
+		document.getElementsByTagName("body")[0].style.display = "flex";
 		section_read().remove();
 		start_game();
 		add_timer();
 		total_moves_helper_function();
 		restart_btn_helper_function();
 		new_game_btn_helper_function();
-		question_btn();
-		setting_button_function();
+		await question_btn();
+		await setting_button_function();
 		update_previous_local_storage_values([{ minute: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
 		seconds_update(0);
 		minutes_update(0);
@@ -115,6 +118,8 @@ function score_board_new_game_button() {
 	new_game_button_.innerText = "New Game";
 	new_game_button_.addEventListener("click", function () {
 		update_previous_local_storage_values(["", false, "", { minute: 0, seconds: 0 }, 0], [["game_level"], ["play"], ["select_game_values"], ["time"], ["total_moves"]]);
+		document.getElementsByTagName("body")[0].style.display = "flex";
+		score_board_body_height(window.matchMedia("(max-width: 750px)"));
 		section_read().remove();
 		start_user_input_name_function();
 		get_accessibility_value() ? toggle_accessibility_value() : "";

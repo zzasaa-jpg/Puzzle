@@ -14,7 +14,7 @@ let nav_bar_list_active_key = 0;
 let nav_bar_items_array = ["Sound functionality", "Best time details", "Factory reset"];
 let span_of_array = ["S/s => toggle sound of popper", "R/r => reset the game", "N/n => for new game", "P/p => timer pause or play"];
 span_of_array_create(span_of_array);
-let nav_bar_list_functions_array = [nav_bar_list_active_value_2, nav_bar_list_active_value_3, nav_bar_list_active_value_4];
+let nav_bar_list_functions_array = [nav_bar_list_active_value_2, nav_bar_list_active_value_3, await nav_bar_list_active_value_4];
 
 //--------------------------setting button ------------------------------
 export default async function setting_button_function() {
@@ -53,7 +53,7 @@ let setting_wrapper_close_button = document.createElement("button");
 setting_wrapper_close_button.id = "setting_wrapper_close_button"
 setting_wrapper_close_button.innerHTML = await call_svg("../../settings/SVG/close.svg");
 //-----------------------------------------------------------------------
-//-----------------------------setting dialog-------------------------------
+//--------------------------setting dialog-------------------------------
 let setting_dialog = document.createElement("dialog");
 setting_dialog.id = "setting_dialog";
 //-----------------------------------------------------------------------

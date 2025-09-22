@@ -71,8 +71,8 @@ export default function create_the_puzzle_boxes() {
 			else if (read_local_storage_values("game_level") == "2") {
 				section_read().style.gridTemplateColumns = "repeat(5, 1fr)";
 				[...divs_read()].forEach(div => {
-					div.style.width = "100px";
-					div.style.height = "100px";
+					div.style.width = "90px";
+					div.style.height = "90px";
 					if (read_local_storage_values("select_game_values") == "2" || read_local_storage_values("select_game_values") == "3") {
 						div.style.fontSize = "2rem";
 					}
