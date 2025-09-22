@@ -11,7 +11,7 @@ The goal is simple: rearrange shuffled tiles to restore the correct order. Quick
 - Responsive design for all devices  
 
 ## Play the Game
-- [Live Demo on Netlify](https://your-netlify-link.com)
+- [Live Demo on Netlify](https://357-puzzle.netlify.app/)
 
 ## About
 This is a small project to practice **JavaScript game logic**, DOM manipulation, and responsive UI design.
