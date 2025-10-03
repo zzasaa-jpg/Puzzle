@@ -5,12 +5,30 @@ import { live_update } from "../js/variables.js";
 export default function update_previous_local_storage_values(update_values, update_keys) {
 	try {
 		let previous_obj = JSON.parse(localStorage.getItem("obj"));
-		for (const [key, value] of Object.entries(previous_obj)) {
-			updated_obj[key] = value;
-			for (let j = 0; j < update_keys.length; j++) {
-				if (update_keys[j].includes(key)) {
-					updated_obj[key] = update_values[j];
+		for (let key in updated_obj) {
+			delete updated_obj[key];
+		}
+
+		Object.assign(updated_obj, previous_obj);
+
+		for (let j = 0; j < update_keys.length; j++) {
+			let path = update_keys[j];
+			let update = update_values[j];
+			let target = updated_obj;
+
+			for (let i = 0; i < path.length - 1; i++) {
+				target = target[path[i]];
+			}
+
+			let lastKey = path[path.length - 1];
+
+			if (typeof update === "object" && update !== null) {
+				target[lastKey] = {
+					...target[lastKey],
+					...update
 				}
+			} else {
+				target[lastKey] = update;
 			}
 		}
 		update_local_storage_values();
@@ -19,4 +37,3 @@ export default function update_previous_local_storage_values(update_values, upda
 		console.error(err);
 	}
 }
-//The function takes two parameters. if update_keys array includes the key then take that key 'updated_obj[key]' = replace that key's value from 'updated_values[j]'

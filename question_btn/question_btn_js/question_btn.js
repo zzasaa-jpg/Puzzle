@@ -1,5 +1,6 @@
 import call_svg from "../../timer/timer_js/call_svg.js";
 import { question_button_create } from "../../js/variables.js";
+import { read_local_storage_values } from "../../Local_Storage/Local_Storage.js";
 //--------------------------------creating variables------------------------------------------
 let question_container_wrapper_, question_container_page_, head_, paragraph_, close_btn_, question_btn_, question_btn_info;
 //--------------------------------------------------------------------------------------------
@@ -53,7 +54,7 @@ function head() {
 //---------------------------------paragraph (p-tag)------------------------------------------
 function paragraph() {
 	paragraph_ = document.createElement("p");
-	paragraph_.innerText = "ABOUT THIS GAME => Puzzle is a lightweight 3x3 sliding-tile puzzle game built with html,css and js. You need to move the tiles around until they are in the correct order to complete the sequence. It's simple to play, works on both computer and mobile, and is great for quick brain exercise.";
+	paragraph_.innerText = `Hello ${read_local_storage_values("user_name")} ABOUT THIS GAME => Puzzle is a lightweight 3x3 sliding-tile puzzle game built with html,css and js. You need to move the tiles around until they are in the correct order to complete the sequence. It's simple to play, works on both computer and mobile, and is great for quick brain exercise.`;
 	paragraph_.id = "paragraph_of_question_btn";
 	return paragraph_;
 }

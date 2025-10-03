@@ -18,7 +18,7 @@ export default function new_game_btn_helper_function() {
 	new_game_btn_.innerText = "New Game";
 	new_game_btn_.id = "new_game_btn";
 	new_game_btn_.addEventListener("click", function () {
-		update_previous_local_storage_values(["", false, "", { minute: 0, seconds: 0 }, 0], [["game_level"], ["play"], ["select_game_values"], ["time"], ["total_moves"]]);
+		update_previous_local_storage_values(["", false, "", { minutes: 0, seconds: 0 }, 0], [["game_level"], ["play"], ["select_game_values"], ["time"], ["total_moves"]]);
 		section_read().remove();
 		accessibility_btn_read().remove();
 		timer_div_read().remove();

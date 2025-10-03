@@ -17,7 +17,7 @@ export default function restart_btn_helper_function() {
 	restart_btn_.innerText = "Restart";
 	restart_btn_.id = "restart_btn";
 	restart_btn_.addEventListener("click", function () {
-		update_previous_local_storage_values([{ minute: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
+		update_previous_local_storage_values([{ minutes: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
 		section_read().remove();
 		timer_div_read().remove();
 		if (clear_interval_read()) {
