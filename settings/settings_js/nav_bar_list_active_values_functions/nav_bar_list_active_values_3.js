@@ -12,13 +12,15 @@ export default function nav_bar_list_active_value_3(value_) {
 	let reset_button = document.createElement("button");
 	reset_button.id = "reset_button";
 	reset_button.innerText = "Reset";
+	let best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
 	reset_button.addEventListener("click", function () {
-		update_previous_local_storage_values([{ minutes: 0, seconds: 0 }], [["best_time"]]);//previous values and new values updated at a time
+		update_previous_local_storage_values([{ minutes: 0, seconds: 0 }], [["best_time", Number(read_local_storage_values("game_level"))]]);//previous values and new values updated at a time
 		document.getElementById("div__").remove();
-		create_div_function().append(paragraph(`Best time: ${read_local_storage_values("best_time").minutes}:${read_local_storage_values("best_time").seconds}`), reset_button);
+		let updated_best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
+		create_div_function().append(paragraph(`Best time: ${updated_best_time.minutes}:${updated_best_time.seconds}`), reset_button);
 		setting_box_right_side_div_read().append(div___read());
 	});
-	create_div_function().append(paragraph(`Best time: ${read_local_storage_values("best_time").minutes}:${read_local_storage_values("best_time").seconds}`), reset_button);//p, button tag
+	create_div_function().append(paragraph(`Best time: ${best_time.minutes}:${best_time.seconds}`), reset_button);//p, button tag
 	setting_box_right_side_div_read().append(nav_bar_key_h1_read(), horizontal_rule(), div___read());//h1, hr, div tag
 }
 //--------------------------------------------------------------------

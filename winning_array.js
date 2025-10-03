@@ -35,7 +35,7 @@ export default function winning_array() {
 				"XLI","XLII"],["XLIII","XLIV","XLV","XLVI","XLVII","XLVIII","0"]],
 			3:[["i","ii","iii","iv","v","vi","vii"],["viii","ix","x",
 				"xi","xii","xiii","xiv"],["xv","xvi","xvii","xviii","xix","xx",
-				"xxi"],["xxii","xxiii","xxiv","xxv","xxvi","xvii","xxviii"],["xxix","xxx",
+				"xxi"],["xxii","xxiii","xxiv","xxv","xxvi","xxvii","xxviii"],["xxix","xxx",
 				"xxxi","xxxii","xxxiii","xxxiv","xxxv"],["xxxvi","xxxvii","xxxviii","xxxix","xl",
 				"xli","xlii"],["xliii","xliv","xlv","xlvi","xlvii","xlviii","0"]],
 			4:[["A","B","C","D","E","F","G"],["H","I","J","K","L","M","N"],["O","P","Q",

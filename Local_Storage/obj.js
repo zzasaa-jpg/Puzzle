@@ -6,7 +6,11 @@ let obj = {
 	user_name_first_time_value: false,
 	play: false,
 	total_moves: 0,
-	best_time: { minutes: 0, seconds: 0 },
+	best_time: {
+		1: { minutes: 0, seconds: 0 },
+		2: { minutes: 0, seconds: 0 },
+		3: { minutes: 0, seconds: 0 }
+	},
 	muted: false,
 	short_cuts: false,
 	accessibility_value: false,

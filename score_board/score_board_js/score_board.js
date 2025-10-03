@@ -74,7 +74,8 @@ function score_board_best_time_h2() {
 	best_time_h2_ = document.createElement("h2");
 	best_time_h2_.id = "best_time_h2";
 	best_time_calculate();
-	best_time_h2_.innerText = `Best Time: ${read_local_storage_values("best_time").minutes}:${read_local_storage_values("best_time").seconds}`;
+	let best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
+	best_time_h2_.innerText = `Best Time: ${best_time.minutes}:${best_time.seconds}`;
 	return best_time_h2_;
 }
 //---------------------------------------------------------------------------------------------
@@ -100,7 +101,7 @@ function score_board_play_again_button() {
 		new_game_btn_helper_function();
 		await question_btn();
 		await setting_button_function();
-		update_previous_local_storage_values([{ minute: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
+		update_previous_local_storage_values([{ minutes: 0, seconds: 0 }, 0], [["time"], ["total_moves"]]);
 		seconds_update(0);
 		minutes_update(0);
 		total_moves_counter_update(0);
@@ -117,7 +118,7 @@ function score_board_new_game_button() {
 	new_game_button_.id = "new_game_button";
 	new_game_button_.innerText = "New Game";
 	new_game_button_.addEventListener("click", function () {
-		update_previous_local_storage_values(["", false, "", { minute: 0, seconds: 0 }, 0], [["game_level"], ["play"], ["select_game_values"], ["time"], ["total_moves"]]);
+		update_previous_local_storage_values(["", false, "", { minutes: 0, seconds: 0 }, 0], [["game_level"], ["play"], ["select_game_values"], ["time"], ["total_moves"]]);
 		document.getElementsByTagName("body")[0].style.display = "flex";
 		score_board_body_height(window.matchMedia("(max-width: 750px)"));
 		section_read().remove();
@@ -141,10 +142,11 @@ function score_board_play_again_button_and_new_game_butto_div() {
 /* first condition was initial point; second condition was local storage values 'time' is less
  * than local storage values 'best_time'; else return*/
 function best_time_calculate() {
-	if (read_local_storage_values("best_time").minutes == 0 && read_local_storage_values("best_time").seconds == 0) {
-		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time"]]);
-	} else if (Number(read_local_storage_values("time").minutes) < Number(read_local_storage_values("best_time").minutes) || Number(read_local_storage_values("time").seconds) < Number(read_local_storage_values("best_time").seconds)) {
-		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time"]]);
+	let best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
+	if (Number(best_time.minutes) == 0 && Number(best_time.seconds) == 0) {
+		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time", Number(read_local_storage_values("game_level"))]]);
+	} else if (Number(read_local_storage_values("time").minutes) < Number(best_time.minutes) || Number(read_local_storage_values("time").seconds) < Number(best_time.seconds)) {
+		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time", Number(read_local_storage_values("game_level"))]]);
 	} else return;
 }
 //---------------------------------------------------------------------------------------------
