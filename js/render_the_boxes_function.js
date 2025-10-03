@@ -26,7 +26,7 @@ export default function render_the_boxes() {
 	div_.forEach((ele, index) => {
 		if (ele.innerText == "0") ele.innerText = "";
 		ele.addEventListener("click", function () {
-			total_moves_counter_update(total_moves_counter_read() + 1);
+			total_moves_counter_update((total_moves_counter_read() ?? 0) + 1);
 			update_previous_local_storage_values([total_moves_counter_read()], [["total_moves"]]);
 			update_the_move_in_UI();
 			move(win_pattern_value_read(), ele.innerText, index);
