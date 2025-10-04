@@ -18,6 +18,7 @@ export default function toggle_switch_button() {
 		}
 	} catch (err) {
 		console.error(err);
+		window.location.reload();
 	}
 	//------------------------------------------------------------------------------------------
 	input.addEventListener("change", function () {

@@ -4,7 +4,7 @@ import nav_bar_list_active_value_3 from "./nav_bar_list_active_values_functions/
 import nav_bar_list_active_value_4 from "./nav_bar_list_active_values_functions/nav_bar_list_active_values_4.js";
 import {
 	setting_box_right_side_div_create, span_of_array_create,
-	setting_button_create, live_update
+	setting_button_create,
 } from "../../js/variables.js";
 import { read_local_storage_values } from "../../Local_Storage/Local_Storage.js";
 
@@ -26,7 +26,6 @@ export default async function setting_button_function() {
 	//---------------------setting button toggle event-------------------
 	setting_button.addEventListener("click", function () {
 		setting_dialog_ = !setting_dialog_;
-		live_update(false);
 		if (setting_dialog_) {
 			document.body.append(setting_dialog);
 			setting_dialog.showModal();
@@ -100,6 +99,5 @@ setting_wrapper_close_button.addEventListener("click", function () {
 	setting_dialog_ = false;
 	setting_dialog.remove();
 	setting_dialog.close();
-	live_update(true);
 });
 //-----------------------------------------------------------------------
