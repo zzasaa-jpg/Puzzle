@@ -19,7 +19,11 @@ export default function nav_bar_list_active_value_3(value_) {
 	reset_button.addEventListener("click", function () {
 		update_previous_local_storage_values([{ minutes: 0, seconds: 0 }], [[update_value]]);//previous values and new values updated at a time
 		document.getElementById("div__").remove();
-		create_div_function().append(paragraph(`Best time: ${value.minutes}:${value.seconds}`), reset_button);
+		let after_update_value;
+		if (read_local_storage_values("game_level") == '1') after_update_value = read_local_storage_values("best_time_1");
+		else if (read_local_storage_values("game_level") == '2') after_update_value = read_local_storage_values("best_time_2");
+		else after_update_value = read_local_storage_values("best_time_3");
+		create_div_function().append(paragraph(`Best time: ${after_update_value.minutes}:${after_update_value.seconds}`), reset_button);
 		setting_box_right_side_div_read().append(div___read());
 	});
 	create_div_function().append(paragraph(`Best time: ${value.minutes}:${value.seconds}`), reset_button);//p, button tag
