@@ -74,8 +74,11 @@ function score_board_best_time_h2() {
 	best_time_h2_ = document.createElement("h2");
 	best_time_h2_.id = "best_time_h2";
 	best_time_calculate();
-	let best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
-	best_time_h2_.innerText = `Best Time: ${best_time.minutes}:${best_time.seconds}`;
+	let value;
+	if (read_local_storage_values("game_level") == '1') value = read_local_storage_values("best_time_1");
+	else if (read_local_storage_values("game_level") == '2') value = read_local_storage_values("best_time_2");
+	else value = read_local_storage_values("best_time_3");
+	best_time_h2_.innerText = `Best Time: ${value.minutes}:${value.seconds}`;
 	return best_time_h2_;
 }
 //---------------------------------------------------------------------------------------------
@@ -142,11 +145,14 @@ function score_board_play_again_button_and_new_game_butto_div() {
 /* first condition was initial point; second condition was local storage values 'time' is less
  * than local storage values 'best_time'; else return*/
 function best_time_calculate() {
-	let best_time = read_local_storage_values("best_time")[Number(read_local_storage_values("game_level"))];
-	if (Number(best_time.minutes) == 0 && Number(best_time.seconds) == 0) {
-		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time", Number(read_local_storage_values("game_level"))]]);
-	} else if (Number(read_local_storage_values("time").minutes) < Number(best_time.minutes) || Number(read_local_storage_values("time").seconds) < Number(best_time.seconds)) {
-		update_previous_local_storage_values([read_local_storage_values("time")], [["best_time", Number(read_local_storage_values("game_level"))]]);
+	let value, update_value;
+	if (read_local_storage_values("game_level") == '1') { value = read_local_storage_values("best_time_1"); update_value = "best_time_1"; }
+	else if (read_local_storage_values("game_level") == '2') { value = read_local_storage_values("best_time_2"); update_value = "best_time_2"; }
+	else { value = read_local_storage_values("best_time_3"); update_value = "best_time_3" };
+	if (Number(value.minutes) == 0 && Number(value.seconds) == 0) {
+		update_previous_local_storage_values([read_local_storage_values("time")], [[update_value]]);
+	} else if (Number(read_local_storage_values("time").minutes) < Number(value.minutes) || Number(read_local_storage_values("time").seconds) < Number(value.seconds)) {
+		update_previous_local_storage_values([read_local_storage_values("time")], [[update_value]]);
 	} else return;
 }
 //---------------------------------------------------------------------------------------------
