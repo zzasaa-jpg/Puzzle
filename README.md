@@ -1,5 +1,10 @@
 # Puzzle Game
 
+## Details of stack, third party, programming language
+- FrontEnd
+- No third party
+- Java script
+
 A lightweight **3×3 sliding puzzle game** built with **HTML, CSS, and JavaScript**.  
 The goal is simple: rearrange shuffled tiles to restore the correct order. Quick, and works on both desktop and mobile!
 
